@@ -1,0 +1,192 @@
+/* GENERAL */
+body {
+  font-family: 'Georgia', serif;
+  background-color: #f8f5f2;
+  color: #6b4f3b;
+  margin: 0;
+}
+
+/* HERO (sección 1) */
+.hero {
+  position: relative;
+  background: url('../img/TENANGO%20OTOMI%20-%20Malvina%20Ishutina.jfif') no-repeat center/cover;
+  min-height: 100vh;
+}
+
+/* Degradado inferior */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(248,245,242,0) 0%,
+    #f8f5f2 100%
+  );
+}
+
+/* SECCIÓN 2 */
+.hero2 {
+  position: relative;
+  background: #f8f5f2;
+}
+
+/* Degradado superior */
+.hero2::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(
+    to bottom,
+    rgba(248,245,242,0),
+    #d0b2961f
+  );
+}
+/* CONTENIDO */
+.contenido {
+  display: none;
+}
+
+/* CONTADOR */
+.contador {
+  font-size: clamp(6rem, 6vw, 1.4rem) !important;
+  border: 2px dashed #c8a97e;
+  border-radius: 15px;
+  background: #fffdfb;
+  padding: 1rem 2rem;
+  display: inline-block;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* MODAL */
+#modalSobre {
+  position: fixed;
+  inset: 0;
+  background: rgba(248, 245, 242, 0.6);
+  z-index: 9999;
+}
+
+/* SOBRE */
+.sobre {
+  width: 90%;
+  max-width: 400px;
+  height: 200px;
+  background: #ffffff;
+  border: 2px solid #c8a97e;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* TAPA */
+.tapa {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #e8d5b7;
+  clip-path: polygon(0 0, 100% 0, 50% 50%);
+  transform-origin: top;
+  transition: transform 1s;
+  z-index: 2;
+}
+
+/* CARTA */
+.carta {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6b4f3b;
+}
+
+/* ANIMACIONES */
+.sobre.abierto .tapa {
+  transform: rotateX(180deg);
+}
+
+#modalSobre.oculto {
+  animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+/* CONTENEDOR DEL MARCO */
+.marco-img {
+  padding: 12px;
+  border-radius: 20px;
+  background: linear-gradient(135deg, #f8f5f2, #e8d5b7);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  max-width: 500px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* BORDE INTERNO TIPO MARCO */
+.marco-img::before {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 2px solid #c8a97e;
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+/* IMAGEN */
+.marco-img img {
+  border-radius: 12px;
+  transition: transform 0.6s ease;
+}
+
+/* EFECTO HOVER */
+.marco-img:hover img {
+  transform: scale(1.05);
+}
+
+/* EFECTO BRILLO */
+.marco-img::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 60%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,0.5),
+    transparent
+  );
+  transform: skewX(-20deg);
+  animation: brillo 4s infinite;
+}
+
+/* ANIMACIÓN */
+@keyframes brillo {
+  0% { left: -100%; }
+  100% { left: 150%; }
+}
+/* //Fondos */
+.fondosPrimary{
+  background-color: #ffffffd4;
+  color: #c8a97e;
+}
+.tittle{
+  font-size: clamp(1rem, 8vw, 4rem) !important;
+}
+.texto-grande {
+  background-color: #ae9776;
+  font-size: clamp(3rem, 4.5vw, 6rem);
+}
