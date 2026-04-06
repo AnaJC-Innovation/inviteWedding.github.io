@@ -283,3 +283,20 @@ body {
   background-color: #ae9776;
   font-size: clamp(3rem, 4.5vw, 6rem);
 }
+.img-uniforme {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+@media (min-width: 768px) {
+  .img-uniforme {
+    height: 220px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .img-uniforme {
+    height: 260px;
+  }
+}
