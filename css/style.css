@@ -31,7 +31,7 @@ body {
 /* SECCIÓN 2 */
 .hero2 {
   position: relative;
-  background: #f8f5f2;
+  background: rgba(248, 245, 242, 0.6);
 }
 
 /* Degradado superior */
@@ -41,7 +41,7 @@ body {
   top: -120px;
   left: 0;
   width: 100%;
-  height: 120px;
+  height: 150px;
   background: linear-gradient(
     to bottom,
     rgba(248,245,242,0),
@@ -55,10 +55,10 @@ body {
 
 /* CONTADOR */
 .contador {
-  font-size: clamp(6rem, 6vw, 1.4rem) !important;
+  font-size: clamp(5rem, 6vw, 1.4rem) !important;
   border: 2px dashed #c8a97e;
   border-radius: 15px;
-  background: #fffdfb;
+  background: rgba(248, 245, 242, 0.6);
   padding: 1rem 2rem;
   display: inline-block;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -126,7 +126,7 @@ body {
 .marco-img {
   padding: 12px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #f8f5f2, #e8d5b7);
+  background: linear-gradient(135deg, #f8f5f2a8, #e8d5b7);
   box-shadow: 0 10px 25px rgba(0,0,0,0.15);
   max-width: 500px;
   width: 100%;
@@ -177,6 +177,16 @@ body {
 @keyframes brillo {
   0% { left: -100%; }
   100% { left: 150%; }
+}
+#textoTyping::after {
+  content: "|";
+  animation: blink 1s infinite;
+  margin-left: 5px;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
 }
 /* //Fondos */
 .fondosPrimary{

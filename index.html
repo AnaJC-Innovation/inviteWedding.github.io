@@ -17,32 +17,28 @@
 <section class="hero d-flex align-items-center text-center">
   <div class="container contenido">
     <div class="row justify-content-center gy-5">
-
       <div class="col-12 mb-12">
         <h1 class="display-8 display-md-6 fw-bold fondosPrimary tittle">
           Nuestra boda <br> Ana & Horacio
         </h1>
       </div>
-
       <div class="col-12 mb-12">
         <div id="contador" class="contador"></div>
       </div>
-    </div>
-  </div>
-  <div class="container py-4 hero2 gy-4">
-    <div class="d-flex justify-content-center">
-      <div class="marco-img text-center">
-        <img src="img/a.jpg" class="img-fluid rounded" alt="cabeceraA">
+      <div class="col-12 py-4 hero2 gy-4">
+        <div class="d-flex justify-content-center">
+          <div class="marco-img text-center">
+            <img src="img/a.jpg" class="img-fluid rounded" alt="cabeceraA">
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
-<div class="col-12 col-md-12">
-        <p class="lead texto-grande text-white fst-italic">
-          Dos caminos, una historia. <br> Dos corazones, un mismo latido.  <br>
-          Acompáñanos en el inicio de nuestra nueva vida.
-        </p>
-      </div>
+<div class="col-12 d-flex align-items-center text-center justify-content-center">
+  <p id="textoTyping" class="lead texto-grande text-white fst-italic p-4">
+  </p>
+</div>
 
 
 
@@ -62,6 +58,26 @@
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
 
+
+<script>
+const texto = `Dos caminos, una historia.
+Dos corazones, un mismo latido.
+Acompáñanos en el inicio de nuestra nueva vida.`;
+
+let i = 0;
+const velocidad = 40; // más bajo = más rápido
+
+function escribir() {
+  if (i < texto.length) {
+    document.getElementById("textoTyping").innerHTML += 
+      texto.charAt(i) === "\n" ? "<br>" : texto.charAt(i);
+    i++;
+    setTimeout(escribir, velocidad);
+  }
+}
+
+window.addEventListener("load", escribir);
+</script>
 <script>
 const fechaBoda = new Date("August 01, 2026 00:00:00").getTime();
 
