@@ -178,15 +178,98 @@ body {
   0% { left: -100%; }
   100% { left: 150%; }
 }
+#textoTyping {
+  position: relative;
+  display: inline-block;
+}
+
+/* Degradado inferior */
 #textoTyping::after {
-  content: "|";
-  animation: blink 1s infinite;
-  margin-left: 5px;
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 40px; /* ajusta intensidad */
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0) 0%,
+    rgba(248,245,242,0.9) 100%
+  );
+  pointer-events: none;
 }
 
 @keyframes blink {
   0%, 50%, 100% { opacity: 1; }
   25%, 75% { opacity: 0; }
+}
+/* seccion de calendario */
+/* CONTENEDOR */
+.calendario {
+  /* background: rgba(255,255,255,0.5); */
+  border-radius: 20px;
+  max-width: 90%;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* MES */
+.mes {
+  color: #6b4f3b;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+/* GRID */
+.dias-semana, .dias {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+}
+
+/* DÍAS */
+.dias div, .dias-semana div {
+  padding: 8px;
+  font-size: 0.9rem;
+}
+
+/* DÍA ESPECIAL */
+.dia.especial {
+  background: #c8a97e;
+  color: white;
+  border-radius: 40%;
+  font-weight: bold;
+  position: relative;
+  animation: latido 1.5s infinite;
+}
+
+/* CORAZÓN */
+.dia.especial::after {
+  content: "❤";
+  position: absolute;
+  bottom: -8px;
+  right: -5px;
+  font-size: 0.8rem;
+}
+
+/* ANIMACIÓN LATIDO */
+@keyframes latido {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+.titulo-bronce {
+  font-family: 'Georgia', serif; /* elegante */
+  font-style: italic;
+  font-weight: 600;
+  font-size: clamp(2.2rem, 3vw, 1.8rem);
+
+  /* Color bronce */
+  background: linear-gradient(135deg, #cd7f32, #a97142, #e6b17e);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  letter-spacing: 1px;
 }
 /* //Fondos */
 .fondosPrimary{
