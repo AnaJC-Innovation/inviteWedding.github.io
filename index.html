@@ -196,6 +196,25 @@
     </div>
   </div>
 </section>
+<section class="tenango-coverflow py-5">
+  <div class="container text-center">
+    <p class="titulo-bronce mb-5">Nuestros momentos</p>
+    <div class="coverflow">
+      <div class="cover active">
+        <img src="img/a.jpg">
+      </div>
+      <div class="cover">
+        <img src="img/a.jpg">
+      </div>
+      <div class="cover">
+        <img src="img/a.jpg">
+      </div>
+      <div class="cover">
+        <img src="img/a.jpg">
+      </div>
+    </div>
+  </div>
+</section>
 <!-- MODAL SOBRE -->
 <div id="modalSobre" class="d-flex justify-content-center align-items-center">
   <div class="sobre" onclick="abrirInvitacion()">
@@ -211,7 +230,37 @@
 
 <!-- JS -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const covers = document.querySelectorAll(".cover");
+let index = 0;
 
+function actualizar() {
+  covers.forEach(c => {
+    c.classList.remove("active", "left", "right", "hidden");
+  });
+
+  covers[index].classList.add("active");
+
+  const prev = (index - 1 + covers.length) % covers.length;
+  const next = (index + 1) % covers.length;
+
+  covers[prev].classList.add("left");
+  covers[next].classList.add("right");
+
+  covers.forEach((c, i) => {
+    if (i !== index && i !== prev && i !== next) {
+      c.classList.add("hidden");
+    }
+  });
+}
+
+setInterval(() => {
+  index = (index + 1) % covers.length;
+  actualizar();
+}, 3000);
+
+actualizar();
+</script>
 <script>
 const items = document.querySelectorAll(".timeline-item");
 

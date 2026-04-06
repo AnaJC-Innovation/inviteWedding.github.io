@@ -561,3 +561,59 @@ body {
     animation: none;
   }
 }
+.tenango-coverflow {
+  background: #f8f5f2;
+  overflow: hidden;
+}
+
+/* CONTENEDOR */
+.coverflow {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+/* TARJETAS */
+.cover {
+  position: absolute;
+  width: 220px;
+  height: 300px;
+  transition: all 0.6s ease;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* IMAGEN */
+.cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* POSICIONES */
+.cover.active {
+  transform: translateX(0) scale(1.1);
+  z-index: 3;
+}
+
+.cover.left {
+  transform: translateX(-180px) rotateY(40deg) scale(0.9);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.cover.right {
+  transform: translateX(180px) rotateY(-40deg) scale(0.9);
+  z-index: 2;
+  opacity: 0.7;
+}
+
+.cover.hidden {
+  opacity: 0;
+  z-index: 1;
+}
