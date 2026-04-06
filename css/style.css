@@ -478,3 +478,86 @@ body {
     transform: translateY(0);
   }
 }
+/* FONDO */
+.tenango-collage {
+  background: #f8f5f2;
+  position: relative;
+  overflow: hidden;
+}
+
+/* DECORACIÓN TENANGO */
+.tenango-collage::before {
+  content: "";
+  position: absolute;
+  top: 10%;
+  left: -50px;
+  width: 200px;
+  height: 200px;
+  background: url('../img/tenango-decor.png') no-repeat center/contain;
+  opacity: 0.15;
+}
+
+/* CONTENEDOR */
+.collage {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  height: 500px;
+}
+
+/* FOTOS */
+.foto {
+  position: absolute;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: transform 0.5s ease;
+}
+
+/* IMÁGENES */
+.foto img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* POSICIONES */
+.foto1 { width: 200px; height: 260px; top: 0; left: 10%; }
+.foto2 { width: 220px; height: 180px; top: 50px; right: 10%; }
+.foto3 { width: 260px; height: 200px; bottom: 0; left: 20%; }
+.foto4 { width: 180px; height: 220px; bottom: 30px; right: 15%; }
+.foto5 { width: 200px; height: 200px; top: 120px; left: 40%; }
+
+/* EFECTO HOVER */
+.foto:hover {
+  transform: scale(1.08) rotate(1deg);
+  z-index: 10;
+}
+
+/* ANIMACIÓN FLOTANTE */
+@keyframes flotar {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.foto {
+  animation: flotar 6s ease-in-out infinite;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .collage {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    height: auto;
+  }
+
+  .foto {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    animation: none;
+  }
+}
