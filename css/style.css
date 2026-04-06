@@ -300,3 +300,81 @@ body {
     height: 260px;
   }
 }
+/* CONTENEDOR */
+.timeline {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* LÍNEA CENTRAL */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background: #6b8f6b;
+}
+
+/* ITEM */
+.timeline-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+/* ICONO */
+.icono {
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  color: #6b8f6b;
+  font-size: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  z-index: 1;
+}
+
+/* TEXTO */
+.contenido {
+  text-align: left;
+}
+
+/* HORA */
+.contenido h4 {
+  margin: 0;
+  color: #6b8f6b;
+  font-weight: bold;
+}
+
+/* DESCRIPCIÓN */
+.contenido p {
+  margin: 0;
+  color: #6b8f6b;
+  font-size: 1.2rem;
+}
+/* ESTADO INICIAL */
+.timeline-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+/* CUANDO APARECE */
+.timeline-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* EFECTO ICONO */
+.icono {
+  transition: transform 0.5s ease;
+}
+
+.timeline-item.show .icono {
+  transform: scale(1.2);
+}
