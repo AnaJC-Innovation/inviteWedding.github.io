@@ -385,7 +385,7 @@ body {
 .hero3 {
   position: relative;
   background: url('../img/fondoItin.jpg') no-repeat center/cover;
-  min-height: 50vh;
+  min-height: 45vh;
 }
 /* FONDO TENANGO */
 .tenango-galeria {
