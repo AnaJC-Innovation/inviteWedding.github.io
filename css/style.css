@@ -677,19 +677,20 @@ body {
 /* SECCIÓN */
 .tenango-mensaje {
   position: relative;
-  background: linear-gradient(
-      rgba(248,245,242,0.9),
-      rgba(248,245,242,0.9)
-    ),
-    url('../img/fondoF.jpg') no-repeat center/cover;
-  background-size: 300px;
-  /* background: url('../img/fondoF.jpg') no-repeat center/cover; */
+ background: linear-gradient(
+  rgba(248,245,242,0.5),
+  rgba(248,245,242,0.38)
+),
+url('../img/fondoF.jpg') center/cover;
+  background-size: cover;
 }
-
+.tenango-mensaje {
+  background-attachment: fixed; /* efecto parallax */
+}
 /* CAJA CENTRAL */
 .mensaje-box {
   max-width: 600px;
-  background: rgba(255, 253, 251, 0.85);
+  background: rgba(255, 253, 251, 0.557);
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
   backdrop-filter: blur(5px);
@@ -705,24 +706,3 @@ body {
 }
 
 /* DETALLE DECORATIVO */
-.tenango-mensaje::before {
-  content: "";
-  position: absolute;
-  top: 10%;
-  left: 5%;
-  width: 120px;
-  height: 120px;
-  background: url('../img/fondoF.jpg') no-repeat center/contain;
-  opacity: 0.2;
-}
-
-.tenango-mensaje::after {
-  content: "";
-  position: absolute;
-  bottom: 10%;
-  right: 5%;
-  width: 120px;
-  height: 120px;
-  background: url('../img/fondoF.jpg') no-repeat center/contain;
-  opacity: 0.2;
-}
