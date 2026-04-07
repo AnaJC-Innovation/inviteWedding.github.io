@@ -55,7 +55,7 @@ body {
 
 /* CONTADOR */
 .contador {
-  font-size: clamp(4rem, 5vw, 1.4rem) !important;
+  font-size: clamp(3rem, 4vw, 1.4rem) !important;
   border: 2px dashed #c8a97e;
   border-radius: 15px;
   background: rgba(248, 245, 242, 0.6);
