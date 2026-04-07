@@ -34,10 +34,30 @@
   </div>
 </section>
 <!-- SECCION DE FRASE A FAM PERSONALIZADO -->
-<div class="col-12 d-flex align-items-center text-center justify-content-center pb-5">
+<div class="col-12 d-flex align-items-center text-center justify-content-center p-5">
   <p id="textoTyping" class="lead texto-grande text-white fst-italic p-4">
   </p>
 </div>
+<!-- SECCION DE SLIDER DE FOTOS -->
+<section class="tenango-coverflow py-5">
+  <div class="col-12 p-5 text-center">
+    <p class="titulo-bronce mb-5">Nuestros momentos</p>
+    <div class="coverflow">
+      <div class="cover active">
+        <img src="img/a.jpg">
+      </div>
+      <div class="cover">
+        <img src="img/a.jpg">
+      </div>
+      <div class="cover">
+        <img src="img/a.jpg">
+      </div>
+      <div class="cover">
+        <img src="img/a.jpg">
+      </div>
+    </div>
+  </div>
+</section>
 <!-- SECCION DE CALENDARIO y DONDE Y CUANDO -->
 <section class="py-5 text-center">
   <div class="col-12 d-flex align-items-center text-center justify-content-center">
@@ -159,7 +179,7 @@
 </section>
 <!-- SECCION DE FOTOS -->
 <section class="tenango-galeria py-5">
-  <div class="container text-center">
+  <div class="col-12 p-5 text-center">
     <p class="titulo-bronce mb-5">Nuestros momentos</p>
     <div class="slider-tenango">
       <div class="card-tenango">
@@ -177,45 +197,52 @@
     </div>
   </div>
 </section>
-<section class="tenango-collage py-5">
-  <div class="container text-center">
-    <p class="titulo-bronce mb-5">Nuestros recuerdos</p>
-    <div class="collage">
-      <div class="foto foto1">
-        <img src="img/a.jpg" alt="">
+<!-- CODIGO DE VESTIMENTA -->
+<section class="tenango-dress py-5 text-center backs">
+  <div class="container">
+    <p class="text-white mb-5 fs-1">Código de vestimenta </p>
+    <div class="row justify-content-center gy-4">
+      <!-- HOMBRES -->
+      <div class="col-12 col-md-5">
+        <div class="card-dress p-4">
+          <div class="icono-dress">🤵</div>
+          <h3 class="mt-3">Hombres</h3>
+          <p class="fs-2" >Formal / Guayabera<br>  Elegante</p>
+        </div>
       </div>
-      <div class="foto foto2">
-        <img src="img/a.jpg" alt="">
+      <!-- MUJERES -->
+      <div class="col-12 col-md-5">
+        <div class="card-dress p-4">
+          <div class="icono-dress">👗</div>
+          <h3 class="mt-3">Mujeres</h3>
+          <p class="fs-2">Vestido formal <br> Colores vivos inspirados en Tenangos</p>
+        </div>
       </div>
-      <div class="foto foto3">
-        <img src="img/a.jpg" alt="">
-      </div>
-      <div class="foto foto4">
-        <img src="img/a.jpg" alt="">
-      </div>
-      <div class="foto foto5">
-        <img src="img/a.jpg" alt="">
+    </div>
+    <!-- COLORES -->
+    <div class="mt-5">
+      <p class="fw-bold mb-3 text-white fs-3" >Colores sugeridos</p>
+      <div class="colores d-flex justify-content-center gap-3 flex-wrap">
+        <span class="color c1"></span>
+        <span class="color c2"></span>
+        <span class="color c3"></span>
+        <span class="color c4"></span>
+        <span class="color c5"></span>
       </div>
     </div>
   </div>
 </section>
-<section class="tenango-coverflow py-5">
-  <div class="container text-center">
-    <p class="titulo-bronce mb-5">Nuestros momentos</p>
-    <div class="coverflow">
-      <div class="cover active">
-        <img src="img/a.jpg">
-      </div>
-      <div class="cover">
-        <img src="img/a.jpg">
-      </div>
-      <div class="cover">
-        <img src="img/a.jpg">
-      </div>
-      <div class="cover">
-        <img src="img/a.jpg">
-      </div>
+<!-- FIN -->
+<section class="tenango-mensaje d-flex align-items-center text-center py-5">
+  <div class="container">
+
+    <div class="mensaje-box mx-auto p-4">
+      <p class="mensaje-texto">
+        Estamos deseando celebrar <br>
+        juntos este gran día 💍
+      </p>
     </div>
+
   </div>
 </section>
 <!-- MODAL SOBRE -->
@@ -292,7 +319,7 @@ Fam. Cruz Cruz  Tienen el honor de invitarte a la celebración
 de su boda a la Familia \n`;
 
 let i = 0;
-const velocidad = 60; // más bajo = más rápido
+const velocidad = 50; // más bajo = más rápido
 
 function escribir() {
   if (i < texto.length) {
