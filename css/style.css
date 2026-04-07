@@ -698,11 +698,80 @@ url('../img/fondoF.jpg') center/cover;
 
 /* TEXTO */
 .mensaje-texto {
-  font-family: 'Georgia', serif;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-family: 'Georgia', serif; /* elegante */
   font-style: italic;
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
   color: #6b4f3b;
   line-height: 1.5;
+  font-bold: 600;
 }
 
-/* DETALLE DECORATIVO */
+/* SECCIÓN */
+.boda-hero {
+  min-height: 100vh;
+  background: linear-gradient(
+      rgba(248,245,242,0.6),
+      rgba(248,245,242,0.8)
+    ),
+    url('../img/fondoF.jpg') no-repeat center/cover;
+}
+
+/* CONTENIDO */
+.contenido-boda {
+  animation: fadeUp 1.5s ease;
+  background-color: #faf7f2 ;
+}
+
+/* TÍTULO */
+.titulo-boda {
+  font-family: 'Georgia', serif;
+  font-size: clamp(5.5rem, 5vw, 4rem);
+  color: #6b4f3b;
+  margin-bottom: 10px;
+  opacity: 0;
+  animation: aparecer 1.5s ease forwards;
+}
+
+/* FECHA */
+.fecha-boda {
+  font-size: clamp(3.5rem, 3vw, 2.2rem);
+  color: #8a6f58;
+  letter-spacing: 2px;
+  opacity: 0;
+  animation: aparecer 1.5s ease forwards;
+  animation-delay: 0.8s;
+}
+
+/* ANIMACIONES */
+@keyframes aparecer {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* EFECTO BRILLO SUTIL */
+.titulo-boda::after {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 2px;
+  margin: 10px auto 0;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #c8a97e,
+    transparent
+  );
+  animation: brillo 3s infinite;
+}
+
+@keyframes brillo {
+  0% { opacity: 0; transform: scaleX(0.5); }
+  50% { opacity: 1; transform: scaleX(1); }
+  100% { opacity: 0; transform: scaleX(0.5); }
+}
