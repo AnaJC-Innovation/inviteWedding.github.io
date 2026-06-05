@@ -325,12 +325,15 @@ window.addEventListener("scroll", mostrarItems);
 window.addEventListener("load", mostrarItems);
 </script>
 <script>
-const texto = `El amor nos unió, la vida nos encontró y hoy nuestros sueños se convierten en uno solo.\n
+const params = new URLSearchParams(window.location.search);
+const apellido = params.get("apellido") || "Invitados";
 
-Con la bendición de nuestras familias y la alegría de nuestros corazones, la **Familia Cruz Cruz** tiene el honor de invitar a la apreciable **Familia [Apellido]** a compartir con nosotros este día tan especial, en el que celebraremos el inicio de una nueva vida juntos.\n
+const texto = `El amor nos unió, la vida nos encontró y hoy nuestros sueños se convierten en uno solo.
+
+Con la bendición de nuestras familias y la alegría de nuestros corazones, la Familia Cruz Cruz tiene el honor de invitar a la apreciable Familia ${apellido} a compartir con nosotros este día tan especial, en el que celebraremos el inicio de una nueva vida juntos.
 
 Esperamos contar con su valiosa compañía para ser parte de este momento inolvidable.
-\n`;
+`;
 
 let i = 0;
 const velocidad = 60; // más bajo = más rápido
