@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body >
 
 <!-- SECCIÓN PRINCIPAL -->
 <section class="hero d-flex align-items-center text-center pb-4">
@@ -319,11 +319,22 @@ window.addEventListener("scroll", mostrarItems);
 window.addEventListener("load", mostrarItems);
 </script>
 <script>
-const texto = `Dos caminos, una historia.
-Dos corazones, un mismo latido.
-Acompáñanos en el inicio de nuestra nueva vida. \n
-Fam. Cruz Cruz  Tienen el honor de invitarte a la celebración 
-de su boda a la Familia \n`;
+const params = new URLSearchParams(window.location.search);
+const apellido = params.get("apellido") || "Invitado";
+
+const texto = `El amor nos unió, la vida nos encontró y hoy nuestros sueños se convierten en uno solo.
+
+Con la bendición de nuestras familias y la alegría de nuestros corazones, la **Familia Cruz Cruz** tiene el honor de invitar a la apreciable **Familia ${apellido}** a compartir con nosotros este día tan especial, en el que celebraremos el inicio de una nueva vida juntos.
+
+Esperamos contar con su valiosa compañía para ser parte de este momento inolvidable.
+`;
+
+// Convierte **texto** en <strong>texto</strong>
+const html = texto
+  .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
+  .replace(/\n/g, "<br>");
+
+document.getElementById("invitacion").innerHTML = html;
 
 let i = 0;
 const velocidad = 60; // más bajo = más rápido
