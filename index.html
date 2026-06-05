@@ -10,35 +10,11 @@
   <!-- Estilos -->
   <link rel="stylesheet" href="css/style.css">
 </head>
-<style>
-  .fade-up{
-    opacity:0;
-    transform:translateY(50px);
-    transition:all .8s ease;
-}
 
-.fade-up.visible{
-    opacity:1;
-    transform:translateY(0);
-}
-</style>
-<script>
-  const elementos = document.querySelectorAll('.fade-up');
-
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if(entry.isIntersecting){
-            entry.target.classList.add('visible');
-        }
-    });
-});
-
-elementos.forEach(el => observer.observe(el));
-</script>
 <body >
 
 <!-- SECCIÓN PRINCIPAL -->
-<section class="hero d-flex align-items-center text-center pb-4 fade-up">
+<section class="hero d-flex align-items-center text-center pb-4">
   <div class="container contenido">
     <div class="row justify-content-center gy-5">
       <div class="col-12 py-4 hero2">
@@ -63,7 +39,7 @@ elementos.forEach(el => observer.observe(el));
   </p>
 </div>
 <!-- SECCION DE SLIDER DE FOTOS -->
-<section class="tenango-coverflow py-5 fade-up">
+<section class="tenango-coverflow py-5">
   <div class="col-12 p-5 text-center">
     <div class="coverflow">
       <div class="cover active">
