@@ -256,9 +256,15 @@
 <div id="modalSobre" class="d-flex justify-content-center align-items-center">
   <div class="sobre" onclick="abrirInvitacion()">
     <div class="tapa"></div>
-    <div class="carta">Haz clic para abrir</div>
-  </div>
+    <div class="carta" id="familiaSobre">Fam.</div>
 </div>
+</div>
+<script>
+  const paramsr = new URLSearchParams(window.location.search);
+const apellidos = paramsr.get("apellido") || "Invitados";
+
+document.getElementById("familiaSobre").textContent = `Fam. ${apellidos}`;
+</script>
 
 <!-- AUDIO -->
 <audio id="musica" loop>
@@ -319,22 +325,12 @@ window.addEventListener("scroll", mostrarItems);
 window.addEventListener("load", mostrarItems);
 </script>
 <script>
-const params = new URLSearchParams(window.location.search);
-const apellido = params.get("apellido") || "Invitado";
+const texto = `El amor nos unió, la vida nos encontró y hoy nuestros sueños se convierten en uno solo.\n
 
-const texto = `El amor nos unió, la vida nos encontró y hoy nuestros sueños se convierten en uno solo.
-
-Con la bendición de nuestras familias y la alegría de nuestros corazones, la **Familia Cruz Cruz** tiene el honor de invitar a la apreciable **Familia ${apellido}** a compartir con nosotros este día tan especial, en el que celebraremos el inicio de una nueva vida juntos.
+Con la bendición de nuestras familias y la alegría de nuestros corazones, la **Familia Cruz Cruz** tiene el honor de invitar a la apreciable **Familia [Apellido]** a compartir con nosotros este día tan especial, en el que celebraremos el inicio de una nueva vida juntos.\n
 
 Esperamos contar con su valiosa compañía para ser parte de este momento inolvidable.
-`;
-
-// Convierte **texto** en <strong>texto</strong>
-const html = texto
-  .replace(/\*\*(.*?)\*\*/g, "<strong>$1</strong>")
-  .replace(/\n/g, "<br>");
-
-document.getElementById("invitacion").innerHTML = html;
+\n`;
 
 let i = 0;
 const velocidad = 60; // más bajo = más rápido
