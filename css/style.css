@@ -235,8 +235,8 @@ body {
 
 /* DÍA ESPECIAL */
 .dia.especial {
-  background: #c8a97e;
-  color: white;
+  background: #f1ede7;
+  color: rgb(138, 124, 79);
   border-radius: 40%;
   font-weight: bold;
   position: relative;
